@@ -38,12 +38,9 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-
 //Retrieve existing notes
 app.get('/api/notes', (req, res) => {
-for (let i = 0; i < noteData.length; i++) {
- JSON.parse(noteData)    
-}
+res.json(noteData)
 });
 
 //Wildcard Route
