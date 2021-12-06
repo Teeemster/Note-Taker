@@ -89,31 +89,28 @@ app.post('/api/notes', (req, res) => {
 
 //Delete Route
 app.delete('/api/notes/:id', (req, res) => {
-    //Access the db.json
-    let dbJSON = path.join(__dirname, '/db/db.json');
-    //Loop to find the ID
+    // Pull the File Path
+    let dbJSON = path.join(__dirname, "/db/db.json");
+    // Loop through the db.json file
     for (let i = 0; i < noteData.length; i++) {
-        //Ensure the param ID matches the database id
-        if (noteData[i].id === req.params.id) {
-            //Remove the noteData via splice specifically at the index
+        //Locate the id on the note
+        if (noteData[i].id == req.params.id) {
+            //Splice from the specific index of the note id
             noteData.splice(i, 1);
+            //break from the loop
             break;
         }
     }
-
     //Rewrite the file
-    fs.writeFileSync(dbJSON, JSON.stringify(noteData), err => {
-        
-        //Check for errors
-        if (err) {
-            return console.log(err)
-        } else {
-            console.log(`Notes for ${req.params.id} have been removed!`)
-        }
+    fs.writeFileSync(dbJSON, JSON.stringify(noteData), error => {
 
+        if (error) {
+            return console.log(error);
+        } else {
+            console.log(`Note for ${req.params.id} has been deleted!`);
+        }
     });
 
-    //Present the response
     res.json(noteData);
 
 });
