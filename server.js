@@ -40,7 +40,8 @@ app.get('/notes', (req, res) => {
 
 //Retrieve existing notes
 app.get('/api/notes', (req, res) => {
-res.json(noteData)
+    const notes = JSON.parse(fs.readFileSync('./db/db.json'));
+    res.json(notes);
 });
 
 //Wildcard Route
@@ -80,10 +81,37 @@ app.post('/api/notes', (req, res) => {
                 ? console.error(err)
                 : console.log(`Notes for ${newNotes.title} has been written to JSON file.`)
         );
-
+        
+     res.json(newNotesString)
     }
 
 });
+
+// //Delete Route
+// app.delete('/api/notes/:id', (req, res) => {
+//     //Access the db.json
+//     let dbJSON = res.sendFile(path.join(__dirname, '/db/db.json'))
+//     //Loop to find the ID
+//     for (let i = 0; i < noteData.length; i++) {
+//         //Ensure the param ID matches the database id
+//         if (noteData[i].id == req.params.id) {
+//             //Remove the noteData via splice
+//             noteData.splice(i, 1);
+//             break;
+//         }
+//     }
+
+//     fs.writeFileSync(dbJSON, JSON.stringify(noteData), err => {
+//         if (err) {
+//             return console.log(err)
+//         } else {
+//             console.log ('The note has been deleted!')
+//         }
+//     })
+
+//     res.json(noteData)
+
+// });
 
 //Flip server on and listen
 app.listen(PORT, () =>
