@@ -22,7 +22,7 @@
 ## Usage
 * The server can be invoked using npm start. From here, the user will be enabled to add, save, or delete notes.
 
-* This repository can be opened as an HTML within Github at the website: https://github.com/Teeemster/Team-Profile-Generator
+* The application can be opened here: https://jbchallenge11.herokuapp.com/
 
 ![Sample of Note Taker Website](public/assets/images/notetaker.PNG)
 
@@ -36,7 +36,7 @@
 
 ## Badges
 
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/JSS25-green" alt="JavaScript"></a>
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML25-green" alt="HTML"></a>
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML25-green" alt="EXPRESS.JS"></a>
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML25-green" alt="NODE.JS"></a>
+* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/JSS-green" alt="JavaScript"></a>
+* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML-green" alt="HTML"></a>
+* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML-green" alt="EXPRESS.JS"></a>
+* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML-green" alt="NODE.JS"></a>
